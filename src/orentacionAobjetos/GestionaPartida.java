@@ -24,6 +24,8 @@ public class GestionaPartida {
 		partida1.ImprimeGanador();
 		partida2.ImprimeGanador();
 		partida3.ImprimeGanador();
+		System.out.println(partida1.getNombre());
+		System.out.println(partida1.getGanador());
 		System.out.println(partida1.toString());
 	}
 

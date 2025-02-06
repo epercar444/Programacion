@@ -3,9 +3,9 @@ package orentacionAobjetos;
 import java.util.Arrays;
 
 public class Partida {
-	String nombre;
-	Jugador [] participantes;
-	String ganador;
+	private String nombre;
+	private Jugador [] participantes;
+	private String ganador;
 	public Partida(String nombre, Jugador[] participantes) {
 		super();
 		this.nombre = nombre;
@@ -16,12 +16,34 @@ public class Partida {
 		return "Partida [nombre=" + nombre + ", participantes=" + Arrays.toString(participantes) + ", ganador="
 				+ ganador + "]";
 	}
+	
+	
+	
+	
+	public String getNombre() {
+		return nombre;
+	}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	public Jugador[] getParticipantes() {
+		return participantes;
+	}
+	public void setParticipantes(Jugador[] participantes) {
+		this.participantes = participantes;
+	}
+	public String getGanador() {
+		return ganador;
+	}
+	public void setGanador(String ganador) {
+		this.ganador = ganador;
+	}
 	private float CalculaGanador () {
 		float puntuacionganador = 0;
 		for (int i = 0; i < participantes.length;i++) {
 			Jugador p = participantes[i];
-			if (p.puntuacion > puntuacionganador) {
-				puntuacionganador = p.puntuacion;
+			if (p.getPuntuacion() > puntuacionganador) {
+				puntuacionganador = p.getPuntuacion();
 			}
 			}
 			return puntuacionganador;
@@ -30,10 +52,10 @@ public class Partida {
 		float puntuacionganador = CalculaGanador();
 		for (int i = 0; i < participantes.length;i++) {
 			Jugador p = participantes[i];
-			if (p.puntuacion == puntuacionganador) {
-			String cadena = "El ganador es el jugador/a con el nick " + p.nick + " de nombre " + p.nombre + " con edad " + p.edad + " y de puntuación " + p.puntuacion;
+			if (p.getPuntuacion() == puntuacionganador) {
+			String cadena = "El ganador es el jugador/a con el nick " + p.getNick() + " de nombre " + p.getNombre() + " con edad " + p.getEdad() + " y de puntuación " + p.getPuntuacion();
 			System.out.println(cadena);
 	}
-			ganador = p.nombre;
+			ganador = p.getNombre();
 		} 
 }}
