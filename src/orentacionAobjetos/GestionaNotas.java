@@ -3,6 +3,7 @@ package orentacionAobjetos;
 public class GestionaNotas {
 
 	public static void main(String[] args) {
+		
 		Notas notaproglucia = new Notas ("programacion",6,7,8);
 		Notas notaBBDDlucia = new Notas ("BBDD",9,4,7);
 		Alumno2 lucia = new Alumno2 ("Lucía","lucia@gmail.com");
