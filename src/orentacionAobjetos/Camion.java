@@ -1,6 +1,6 @@
 package orentacionAobjetos;
 
-public class Camion extends Vehiculo {
+public class Camion extends Vehículo {
     private int tonelajekilos;
     private int numpasajeros;
     private int numejes;

@@ -1,6 +1,6 @@
 package orentacionAobjetos;
 
-public class Automovil extends Vehiculo {
+public class Automovil extends Vehículo {
     private String calificacinEcologica;
 
     // Constructor

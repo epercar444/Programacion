@@ -1,12 +1,12 @@
 package orentacionAobjetos;
 
-public class Vehiculo {
+public class Vehículo {
     private String dueno;
     private int numpuertas;
     private int numruedas;
 
     // Constructor
-    public Vehiculo(String dueno, int numpuertas, int numruedas) {
+    public Vehículo(String dueno, int numpuertas, int numruedas) {
         this.dueno = dueno;
         this.numpuertas = numpuertas;
         this.numruedas = numruedas;
