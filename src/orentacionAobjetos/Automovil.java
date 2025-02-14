@@ -1,22 +1,26 @@
 package orentacionAobjetos;
 
 public class Automovil extends Vehículo {
-    private String calificacinEcologica;
+	public CalificacionEcologica calificacinEcologica;
+    public enum CalificacionEcologica {
+    	ECO, O, C , B;
+    } 
 
     // Constructor
-    public Automovil(String dueno, int numpuertas, int numruedas, String calificacinEcologica) {
+    public Automovil(String dueno, int numpuertas, int numruedas, CalificacionEcologica calificacinEcologica) {
         super(dueno, numpuertas, numruedas);  // Llamar al constructor de la clase base
         this.calificacinEcologica = calificacinEcologica;
     }
 
     // Getter y setter
-    public String getCalificacinEcologica() {
+    public CalificacionEcologica getCalificacinEcologica() {
         return calificacinEcologica;
     }
 
-    public void setCalificacinEcologica(String calificacinEcologica) {
-        this.calificacinEcologica = calificacinEcologica;
-    }
+    public void setCalificacinEcologica(CalificacionEcologica calificacinEcologica) {
+    	if (calificacinEcologica.equals(CalificacionEcologica.ECO) || calificacinEcologica.equals(CalificacionEcologica.B) || calificacinEcologica.equals(CalificacionEcologica.C) || calificacinEcologica.equals(CalificacionEcologica.O)) {
+    		this.calificacinEcologica = calificacinEcologica;
+    }}
 
     @Override
     public String toString() {
