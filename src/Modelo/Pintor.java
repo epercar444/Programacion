@@ -1,0 +1,30 @@
+package Modelo;
+
+public class Pintor extends Robot{
+
+	public Pintor(int identificador, String modelo, double bateria, Estado estado, String combustible,
+			String descripion) {
+		super(identificador, modelo, bateria, estado, combustible, descripion);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public String ejecutarTarea() {
+		// TODO Auto-generated method stub
+		return "Aplico pintura a los vehículos de manera uniforme";
+	}
+
+	@Override
+	public boolean recargar() {
+		boolean recargar = false;
+		if (getCombustible().equals("Electricidad")) {
+			recargar = true;
+		}
+		// TODO Auto-generated method stub
+		return recargar;
+	}
+	public void recargarDos () {
+		if (recargar()) {
+			System.out.println("Recargando por electricidad");
+		}
+}}
