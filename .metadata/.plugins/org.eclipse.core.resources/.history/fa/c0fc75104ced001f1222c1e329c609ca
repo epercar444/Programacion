@@ -1,0 +1,38 @@
+package EntornoDesarrollo;
+
+import java.util.Scanner;
+
+public class Ejercicio1 {
+
+	public static void main(String[] args) {
+		String [] letrasDNI = {"T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "K", "E"};
+		System.out.println("Introduce tu dni sin letra:");
+		Scanner sc = new Scanner(System.in);
+		String dni = sc.next();
+		Ejercicio1 p = new Ejercicio1();
+		p.ValidarDni(dni);
+		System.out.println(p.CalculaNum(dni));
+	}
+	public boolean ValidarDni (String dni) {
+		boolean valido = true;
+		if (dni.length() == 8) {
+			valido = true;
+		}
+		else {
+			valido = false;
+		}
+		return valido;
+	}
+	
+	public int CalculaNum (String dni) {
+		boolean valido = ValidarDni(dni);
+		int suma = 0;
+		if (valido) {
+			for (int i = 0; i<dni.length();i++) {
+				int dnireal = Integer.parseInt(dni);
+				suma = dnireal % 23;
+			}
+		}
+		return suma;
+	}
+}

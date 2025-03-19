@@ -1,0 +1,29 @@
+package Modelo;
+
+public class Audios extends ElementosMultimedia{
+	private int duracionMinutos;
+	
+
+	public Audios(int duracionMinutos) {
+		super();
+		this.duracionMinutos = duracionMinutos;
+	}
+
+	public int getDuracionMinutos() {
+		return duracionMinutos;
+	}
+
+	public void setDuracionMinutos(int duracionMinutos) {
+		this.duracionMinutos = duracionMinutos;
+	}
+
+	@Override
+	public boolean estaDisponible() {
+		return true;
+	}
+
+	@Override
+	public int getDevuelveDiasPrestamo() {
+		return 10;
+	}
+}

@@ -1,0 +1,11 @@
+package Controlador;
+
+import Modelo.*;
+
+public class GestionaBiblioteca {
+	Libros l1 = new Libros("pepe","pepito","grillo");
+	Peliculas p1 = new Peliculas (110);
+	Audios a1 = new Audios (140);
+	Juegos j1 = new Juegos (4);
+	
+}

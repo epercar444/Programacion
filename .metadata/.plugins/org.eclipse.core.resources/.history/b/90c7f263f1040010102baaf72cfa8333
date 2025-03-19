@@ -1,0 +1,86 @@
+package Modelo;
+
+import java.time.LocalDate;
+
+public class Alquiler {
+	private int id,num_dias,permiso_cund;
+	private LocalDate fecha_registro, fecha_entrega;
+	private VehiculoGeneral datos_vehiculo;
+	private Estado estado; 
+	
+	public Alquiler(int id, int num_dias, int permiso_cund, LocalDate fecha_registro, VehiculoGeneral datos_vehiculo,
+			Estado estado,LocalDate fecha_entrega) {
+		super();
+		this.id = id;
+		this.num_dias = num_dias;
+		this.permiso_cund = permiso_cund;
+		this.fecha_registro = fecha_registro;
+		this.datos_vehiculo = datos_vehiculo;
+		this.estado = estado;
+		this.fecha_entrega = fecha_entrega;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public int getNum_dias() {
+		return num_dias;
+	}
+
+	public void setNum_dias(int num_dias) {
+		this.num_dias = num_dias;
+	}
+
+	public int getPermiso_cund() {
+		return permiso_cund;
+	}
+
+	public void setPermiso_cund(int permiso_cund) {
+		this.permiso_cund = permiso_cund;
+	}
+
+	public LocalDate getFecha_registro() {
+		return fecha_registro;
+	}
+
+	public void setFecha_registro(LocalDate fecha_registro) {
+		this.fecha_registro = fecha_registro;
+	}
+
+	public VehiculoGeneral getDatos_vehiculo() {
+		return datos_vehiculo;
+	}
+
+	public void setDatos_vehiculo(VehiculoGeneral datos_vehiculo) {
+		this.datos_vehiculo = datos_vehiculo;
+	}
+
+	public Estado getEstado() {
+		return estado;
+	}
+
+	public void setEstado(Estado estado) {
+		this.estado = estado;
+	}
+	public float getPrecioDia() {
+		float precio = 0;
+		if (this.datos_vehiculo instanceof Coche) {
+			precio = 40;
+		}
+		else if (this.datos_vehiculo instanceof Furgoneta) {
+			precio = 45+0.5+getDatos_vehiculo().;
+		}
+		else if (this.datos_vehiculo instanceof Patinete) {
+			int dias = fecha_entrega.getDayOfYear()	- fecha_registro.getDayOfYear();
+			precio = (float) ((50 + ((Furgoneta) datos_vehiculo).getPma() * 0.05)*dias);
+		}
+	}
+	public float getImporteGeneradoPorAlquiler() {
+		
+	}
+}

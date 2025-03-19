@@ -1,0 +1,23 @@
+package EntornoDesarrollo;
+
+import java.util.Scanner;
+
+public class Ejercicio2 {
+
+    public static void main(String[] args) {
+    	Ejercicio2 f = new Ejercicio2();
+        Scanner scanner = new Scanner(System.in);
+        int[] numeros = new int[10]; 
+        System.out.println("Introduce 5 números:");
+        for (int i = 0; i < numeros.length; i++) {
+            numeros[i] = scanner.nextInt(); 
+		}
+        f.OrdenaNumeros(numeros);
+
+	}
+	public void OrdenaNumeros (int [] numeros) {
+		for (int i = numeros.length; i>=0; i--) {
+			System.out.println(numeros[i]);
+		}
+	}
+}

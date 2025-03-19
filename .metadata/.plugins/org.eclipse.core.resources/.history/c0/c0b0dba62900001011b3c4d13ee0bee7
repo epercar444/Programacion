@@ -1,0 +1,15 @@
+package Modelo;
+
+public class Detergente extends Producto{
+	public Detergente(int id, String nombre, String descripcion, float peso, float precioventa, float preciocompra,
+			float iva_aplicable,String marca,TipoDetergente tipodetergente, TipoRopa tirporopa) {
+		super(id, nombre, descripcion, peso, precioventa, preciocompra, iva_aplicable);
+		this.marca = marca;
+		this.tipodetergente = tipodetergente;
+		this.tirporopa = tirporopa;
+	}
+	private String marca;
+	private TipoDetergente tipodetergente;
+	private TipoRopa tirporopa;
+	
+}

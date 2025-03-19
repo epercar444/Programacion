@@ -1,0 +1,6 @@
+package Modelo;
+
+public class Libros extends Recurso{
+	private String autor,editorial,genero;
+	
+}

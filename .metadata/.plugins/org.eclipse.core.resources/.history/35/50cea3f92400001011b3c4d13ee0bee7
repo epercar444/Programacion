@@ -1,0 +1,32 @@
+package Modelo;
+
+public class Juegos extends ElementosMultimedia{
+	public Juegos(String nombre, String genero, int numFases) {
+		super(nombre, genero);
+		this.numFases = numFases;
+	}
+
+	private int numFases;
+
+	public int getNumFases() {
+		return numFases;
+	}
+
+	public void setNumFases(int numFases) {
+		this.numFases = numFases;
+	}
+
+
+	@Override
+	public boolean estaDisponible() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+
+	@Override
+	public int getDevuelveDiasPrestamo() {
+		// TODO Auto-generated method stub
+		return 10;
+	}
+	
+}

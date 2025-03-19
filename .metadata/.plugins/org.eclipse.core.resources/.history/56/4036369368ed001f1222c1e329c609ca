@@ -1,0 +1,60 @@
+package EntornoDesarrollo;
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class Ejercicio3 {
+	    public static void main(String[] args) {
+	    	Scanner sc = new Scanner (System.in);
+	    	Ejercicio3 r = new Ejercicio3();
+	    	int opcion = r.Eligeopcion(sc);
+	    	switch (opcion) {
+	    		case 1:
+	    			r.Piedra(sc);
+	    			r.ImprimeMenú(sc);
+	    			break;
+	    		case 2:
+	    		
+	    	}
+	    }
+	    
+	    void ImprimeMenú (Scanner sc) {
+	    	System.out.println("Elige una opción: ");
+	    	System.out.println("0.Salir");
+	    	System.out.println("1.Piedra");
+	    	System.out.println("2.Papel");
+	    	System.out.println("3.Tijera");
+	    }
+	    
+	    int Eligeopcion (Scanner sc) {
+	    	Ejercicio3 r = new Ejercicio3();
+	    	r.ImprimeMenú(sc);
+	    	int opcion = sc.nextInt();
+	    	return opcion;
+	    }
+	    
+	    int NumeroAleatorio () {
+	    	Random random = new Random();
+	        return random.nextInt(3) + 1; 
+	    }
+	    
+	    void Piedra (Scanner sc) {
+	    	int opcion = 1;
+	    	int random = NumeroAleatorio();
+	    	if (opcion==random) {
+	    		System.out.println("Has elegido piedra y la máquina ha elegido " + random);
+	    		System.out.println("Empate");
+	    	}
+	    	else if (random==2) {
+	    		System.out.println("Has elegido piedra y la máquina ha elegido " + random);
+	    		System.out.println("Has perdido");
+	    	}
+	    	else {
+	    		System.out.println("Has elegido piedra y la máquina ha elegido " + random);
+	    		System.out.println("Has ganado");
+	    	}
+	    }
+	    
+	    
+	    
+}

@@ -1,0 +1,18 @@
+package Modelo;
+
+public class Peliculas extends ElementosMultimedia{
+
+	@Override
+	public boolean estaDisponible() {
+		return false;
+	}
+
+	@Override
+	public int getDevuelveDiasPrestamo() {
+		return 10;
+	}
+	public int duracionMinutos() {
+		return 110;
+	}
+
+}

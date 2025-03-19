@@ -1,0 +1,17 @@
+package Modelo;
+
+public class Audios extends ElementosMultimedia{
+
+	@Override
+	public boolean estaDisponible() {
+		return true;
+	}
+
+	@Override
+	public int getDevuelveDiasPrestamo() {
+		return 10;
+	}
+	public int duracionMinutos() {
+		return 200;
+	}
+}

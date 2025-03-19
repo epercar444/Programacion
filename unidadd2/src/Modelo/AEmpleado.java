@@ -1,0 +1,81 @@
+package Modelo;
+
+import java.util.Objects;
+
+public abstract class AEmpleado implements INomina{
+	private String nombre,identificador,apellidos;
+	private float salario;
+	public boolean tieneReduccionHoraria;
+	private Categoria categoria;
+	@Override
+	public int hashCode() {
+		return Objects.hash(identificador);
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		AEmpleado other = (AEmpleado) obj;
+		return Objects.equals(identificador, other.identificador);
+	}
+	@Override
+	public String toString() {
+		return "AEmpleado [nombre=" + nombre + ", identificador=" + identificador + ", apellidos=" + apellidos
+				+ ", salario=" + salario + ", tieneReduccionHoraria=" + tieneReduccionHoraria + "]";
+	}
+	public String getNombre() {
+		return nombre;
+	}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	public String getIdentificador() {
+		return identificador;
+	}
+	public void setIdentificador(String identificador) {
+		this.identificador = identificador;
+	}
+	public String getApellidos() {
+		return apellidos;
+	}
+	public void setApellidos(String apellidos) {
+		this.apellidos = apellidos;
+	}
+	public float getSalario() {
+		return salario;
+	}
+	public void setSalario(float salario) {
+		this.salario = salario;
+	}
+	public boolean isTieneReduccionHoraria() {
+		return tieneReduccionHoraria;
+	}
+	public void setTieneReduccionHoraria(boolean tieneReduccionHoraria) {
+		this.tieneReduccionHoraria = tieneReduccionHoraria;
+	}
+	public Categoria getCategoria() {
+		return categoria;
+	}
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
+	}
+	public AEmpleado(String nombre, String identificador, String apellidos, float salario,
+			boolean tieneReduccionHoraria, Categoria categoria) {
+		super();
+		this.nombre = nombre;
+		this.identificador = identificador;
+		this.apellidos = apellidos;
+		this.salario = salario;
+		this.tieneReduccionHoraria = tieneReduccionHoraria;
+		this.categoria = categoria;
+	}
+	public abstract String devuelveFunciones();
+	public abstract String imprimeHorario();
+	}
+	
+	
+
