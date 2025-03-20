@@ -52,12 +52,37 @@ public abstract class Deportista implements ICompeticion{
 	public void setPruebas(Prueba[] pruebas) {
 		this.pruebas = pruebas;
 	}
+	
+	/* Punto1 excepcion for (Prueba a: pruebas) {
+		if (a.equals(a)) {
+			throw new Excepcion
+		}
+		else {
+			for (int i =0; i < pruebas.length; i++) {
+				if (pruebas[i] == null) {
+					pruebas[i] = a;
+				}
+			}
+		}
+	}
+	/*Punto2 Excepcion if (EstadoPrueba.Planificada && fecha.after.LocalDate.now()) {
+	 * throw new Excepcion()
+	 * Punto3 Excepcion for(int i = 0; i < pruebas.length(); i++) {
+	 * if (EstadoPrueba.Planificada y la fecha mas cercana????
+	 * Punto4 Excepcion nombreFuncion () {
+	 * int contador = 0;
+	 * for (int i =0; i < pruebas.length; i++) {
+	 * if (EstadoPrueba.PLANIFICADA) {
+	 * contador +=1;
+	 * así con los otros dos
+	 */
+	 */
 	public abstract int getTiempoCalentamiento();
 	public abstract int getCaloriasNecesarias();
-	public int getHorasEntrenamiento() {
+	/*public int getHorasEntrenamiento() {
 		int horas = 0;
 		for (Prueba a: getPruebas()) {
-			if (a.getFecha().minusDays(10) != null) {
+			int dias = a.getFecha().before(LocalDate now());
 				horas = 6; 
 			}
 			else if (a.getFecha().minusDays(4-10) != null) {
@@ -65,8 +90,8 @@ public abstract class Deportista implements ICompeticion{
 			}
 			22
 		}
-	}
-	public abstract void agregarPrueba();
-	public abstract Prueba getProximaPrueba();
-	public abstract int contarPruebasporEstado(EstadoPrueba estado);
+	}*/
+	//public void agregarPrueba();
+	//public Prueba getProximaPrueba();
+	//public int contarPruebasporEstado(EstadoPrueba estado);
 }
