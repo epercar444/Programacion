@@ -1,20 +1,21 @@
 package Simulacro2;
 
 import java.time.LocalDate;
+import java.util.Arrays;
 
 public abstract class Deportista implements ICompeticion{
 	private String nombre,pais;
 	private double peso,altura;
 	private int edad;
 	private Prueba [] pruebas;
-	protected Deportista(String nombre, String pais, double peso, double altura, int edad, Prueba[] pruebas) {
+	protected Deportista(String nombre, String pais, double peso, double altura, int edad) {
 		super();
 		this.nombre = nombre;
 		this.pais = pais;
 		this.peso = peso;
 		this.altura = altura;
 		this.edad = edad;
-		this.pruebas = pruebas;
+		this.pruebas = new Prueba[50];
 	}
 	public String getNombre() {
 		return nombre;
@@ -76,22 +77,44 @@ public abstract class Deportista implements ICompeticion{
 	 * contador +=1;
 	 * así con los otros dos
 	 */
-	 */
 	public abstract int getTiempoCalentamiento();
 	public abstract int getCaloriasNecesarias();
-	/*public int getHorasEntrenamiento() {
-		int horas = 0;
-		for (Prueba a: getPruebas()) {
-			int dias = a.getFecha().before(LocalDate now());
-				horas = 6; 
+	//public int getHorasEntrenamiento() {
+		//int numdias = 0;
+		//numdias = 
+			
+	//}
+	public void agregarPrueba(Prueba a) {
+		for (int i = 0; i < pruebas.length; i++) {
+			if (pruebas[i] != a) {
+				pruebas[i] = a;
+				System.out.println("Prueba agregada");
 			}
-			else if (a.getFecha().minusDays(4-10) != null) {
-				horas = 4;
+			else {
+				System.out.println("Prueba ya agregada anteriormente, intente con otra");
 			}
-			22
 		}
-	}*/
-	//public void agregarPrueba();
-	//public Prueba getProximaPrueba();
+	}
+	public Prueba getProximaPrueba() {
+		Prueba p = pruebas[0];
+		for (int i =0; i < pruebas.length; i++) {
+			if (pruebas[i].equals(EstadoPrueba.PLANIFICADA) && p != null) {
+				int diasMininmo = p.getFecha().compareTo(LocalDate.now());
+				Prueba itero = pruebas[i];
+				int diasItero = itero.getFecha().compareTo(LocalDate.now());
+				if (diasMininmo > diasItero) {
+					p = itero;
+			}
+		}
+			}
+		return p;
+		}
+	@Override
+	public String toString() {
+		return "Deportista [nombre=" + nombre + ", pais=" + pais + ", peso=" + peso + ", altura=" + altura + ", edad="
+				+ edad + ", pruebas=" + Arrays.toString(pruebas) + "]";
+	}
+	}
+
 	//public int contarPruebasporEstado(EstadoPrueba estado);
-}
+

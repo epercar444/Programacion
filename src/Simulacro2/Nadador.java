@@ -3,7 +3,7 @@ package Simulacro2;
 public class Nadador extends Deportista{
 
 	protected Nadador(String nombre, String pais, double peso, double altura, int edad, Prueba[] pruebas) {
-		super(nombre, pais, peso, altura, edad, pruebas);
+		super(nombre, pais, peso, altura, edad);
 		// TODO Auto-generated constructor stub
 	}
 
