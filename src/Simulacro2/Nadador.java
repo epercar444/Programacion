@@ -2,7 +2,7 @@ package Simulacro2;
 
 public class Nadador extends Deportista{
 
-	protected Nadador(String nombre, String pais, double peso, double altura, int edad, Prueba[] pruebas) {
+	protected Nadador(String nombre, String pais, double peso, double altura, int edad) {
 		super(nombre, pais, peso, altura, edad);
 		// TODO Auto-generated constructor stub
 	}
@@ -26,11 +26,11 @@ public class Nadador extends Deportista{
 
 	@Override
 	public int getCaloriasNecesarias() {
-		int suma = 0;
+		int calorias = 0;
 		for (int i = 0; i == (int) getPeso(); i++) {
-			suma = i*100;
+			calorias = calorias + 50;
 		}
-		return suma;
+		return calorias;
 	}
 
 }

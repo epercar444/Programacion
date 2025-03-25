@@ -58,8 +58,8 @@ public class Vuelo {
 		return estado;
 	}
 	public void setEstado(EstadoVuelo estado) {
-		this.estado = estado;
-	}
+			this.estado = estado;
+		}
 	protected Vuelo(int id, String aerolinea, String destino, LocalDate fechavuelo, double duracion,
 			EstadoVuelo estado) {
 		super();

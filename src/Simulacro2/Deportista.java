@@ -53,45 +53,34 @@ public abstract class Deportista implements ICompeticion{
 	public void setPruebas(Prueba[] pruebas) {
 		this.pruebas = pruebas;
 	}
-	
-	/* Punto1 excepcion for (Prueba a: pruebas) {
-		if (a.equals(a)) {
-			throw new Excepcion
-		}
-		else {
-			for (int i =0; i < pruebas.length; i++) {
-				if (pruebas[i] == null) {
-					pruebas[i] = a;
-				}
-			}
-		}
-	}
-	/*Punto2 Excepcion if (EstadoPrueba.Planificada && fecha.after.LocalDate.now()) {
-	 * throw new Excepcion()
-	 * Punto3 Excepcion for(int i = 0; i < pruebas.length(); i++) {
-	 * if (EstadoPrueba.Planificada y la fecha mas cercana????
-	 * Punto4 Excepcion nombreFuncion () {
-	 * int contador = 0;
-	 * for (int i =0; i < pruebas.length; i++) {
-	 * if (EstadoPrueba.PLANIFICADA) {
-	 * contador +=1;
-	 * así con los otros dos
-	 */
 	public abstract int getTiempoCalentamiento();
 	public abstract int getCaloriasNecesarias();
-	//public int getHorasEntrenamiento() {
-		//int numdias = 0;
-		//numdias = 
-			
-	//}
-	public void agregarPrueba(Prueba a) {
+	public int getHorasEntrenamiento() {
+		int horas = 0;
+		int numdias = getProximaPrueba().getFecha().compareTo(LocalDate.now());
+		if (numdias > 10) {
+			horas = 6;
+		}
+		else if(numdias>=4 && numdias<=10) {
+			horas = 4;
+		}
+		else {
+			horas = 3;
+		}
+		return horas;
+	}
+	public void agregarPrueba(Prueba a) throws Excepcion {
 		for (int i = 0; i < pruebas.length; i++) {
-			if (pruebas[i] != a) {
-				pruebas[i] = a;
-				System.out.println("Prueba agregada");
+			if (pruebas[i] != a){
+				if (a.getEstado().equals(EstadoPrueba.PLANIFICADA) && a.getFecha().isBefore(LocalDate.now())) {
+					throw new Excepcion("No se puede agregar una prueba planificada en fecha pasada");
 			}
+				else {				
+					pruebas[i] = a;
+				}
+				}
 			else {
-				System.out.println("Prueba ya agregada anteriormente, intente con otra");
+				throw new Excepcion("Prueba ya agregada anteriormente, intente con otra");
 			}
 		}
 	}
@@ -114,7 +103,22 @@ public abstract class Deportista implements ICompeticion{
 		return "Deportista [nombre=" + nombre + ", pais=" + pais + ", peso=" + peso + ", altura=" + altura + ", edad="
 				+ edad + ", pruebas=" + Arrays.toString(pruebas) + "]";
 	}
+
+	public int contarPruebasporEstado(Prueba p) {
+		int contadorcerrada = 0;
+		int contadorplaneada = 0;
+		int contadorencurso = 0;
+		if (p.getEstado().equals(EstadoPrueba.CERRADA)) {
+			contadorcerrada += 1;
+			return contadorcerrada;
+		}
+		if (p.getEstado().equals(EstadoPrueba.PLANIFICADA)) {
+			contadorplaneada += 1;
+			return contadorplaneada;
 	}
-
-	//public int contarPruebasporEstado(EstadoPrueba estado);
-
+		else {
+			contadorencurso += 1;
+			return contadorencurso;
+	}
+	}
+	}
