@@ -75,7 +75,7 @@ public abstract class MiembroBase {
 	public boolean isAmigo (MiembroBase miembro) {
 		boolean esta = false;
 		for (int i=0; i < amigos.length; i++) {
-			if (amigos[i].equals(miembro)) {
+			if (amigos[i] != null && amigos[i].equals(miembro)) {
 				esta = true;
 			}
 		}

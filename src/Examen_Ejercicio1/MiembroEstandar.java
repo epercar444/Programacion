@@ -1,11 +1,13 @@
 package Examen_Ejercicio1;
 
-public class MiembroEstandar extends MiembroBase{
+import Collection.MiembroBase2;
+
+public class MiembroEstandar extends MiembroBase2{
 	private static int maximoAmigos = 2;
 
 	public MiembroEstandar(String email, String nombre) {
 		super(email, nombre);
-		amigos = new MiembroBase[2];
+		// amigos = new MiembroBase[2];
 	}
 
 	@Override
