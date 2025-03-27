@@ -65,9 +65,7 @@ public abstract class DispositivosWIFI {
 	}
 	public abstract void conectarInternet();
 	public abstract boolean pendienteActualizacion();
-	public void apagar() {
-		this.estado = estado.OFF;
-	}
+	public abstract void apagar();
 	@Override
 	public String toString() {
 		return "DispositivosWIFI [id=" + id + ", MAC=" + MAC + ", estado=" + estado + ", fecha_actu=" + fecha_actu

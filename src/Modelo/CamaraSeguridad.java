@@ -23,4 +23,9 @@ public class CamaraSeguridad extends DispositivosWIFI{
 		return actualiza;
 	}
 
+	@Override
+	public void apagar() {
+		this.estado = Estado2.OFF;		
+	}
+
 }

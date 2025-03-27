@@ -15,11 +15,11 @@ public class Biblioteca {
 		int opcion = f.imprimeMenu();	
 		switch (opcion) {
 		
-		case 1:
+		case 1: {
 			f.addLibro(libros, l1);
 			f.addLibro(libros, l2);
-			break;
-		case 2:
+			break; }
+		case 2:{
 			try {
 				f.prestarLibro(libros, l1);
 				f.prestarLibro(libros, l2);
@@ -27,28 +27,33 @@ public class Biblioteca {
 			catch (BibliotecaExcepcion e) {
 				System.out.println(e.getMessage());
 			}
-			break;
-		case 3:
+			break; }
+		case 3: {
 			try {
 				f.devolverLibro(libros, l1);
 				f.devolverLibro(libros, l2);
 			}
 			catch (BibliotecaExcepcion e) {
 				System.out.println(e.getMessage());
-			}
+			} 
 			break;
-		case 4:
+		}
+		case 4: {
 			f.mostrarInventario(libros);
 			break;
-		case 5:
+		}
+		case 5: {
 			f.imprimeInformacion(l1);
 			break;
-		case 6: 
+		}
+		case 6:  {
 			System.out.println("¿Está esta información en el libro seleccionado?" + f.estaEnLibro("Harry Potter y la piedra filosofal", "Eva", l1, libros));
 			break;
-		case 7:
+		}
+		case 7: {
 			System.out.println("Saliendo del programa");
 			break;
+		}
 		default : 
 			System.out.println("Ingresa una opción correcta");
 		}

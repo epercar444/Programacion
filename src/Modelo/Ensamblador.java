@@ -31,4 +31,3 @@ public class Ensamblador extends Robot{
 			System.out.println("Estoy encendido y no puedo recargar");
 		}
 }}
-

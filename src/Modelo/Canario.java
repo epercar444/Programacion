@@ -4,20 +4,20 @@ public class Canario extends Aves{
 	private String color;
 	private boolean canta;
 	@Override
-	public boolean volar() {
+	public boolean Volar() {
 		// TODO Auto-generated method stub
 		return true;
 	}
 	
 
 	@Override
-	public String muestra() {
+	public String Muestra() {
 		// TODO Auto-generated method stub
 		return "Canario [color=" + color + ", canta=" + canta + "]";
 	}
 
 	@Override
-	public boolean habla() {
+	public boolean Habla() {
 		// TODO Auto-generated method stub
 		return false;
 	}
