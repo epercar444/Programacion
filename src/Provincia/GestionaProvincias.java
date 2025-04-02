@@ -1,6 +1,7 @@
 package Provincia;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -8,10 +9,12 @@ import java.util.Set;
 public class GestionaProvincias {
 
 	public static void main(String[] args) {
-		List <Provincia> poblacion = new ArrayList <Provincia>();
+		List<Provincia> poblaciones = new ArrayList<Provincia>();
+		
 		Provincia p1 = new Provincia(12000,"Sevilla");
 		Provincia p2 = new Provincia(16000,"Granada");
-		ListaProvincia provincias = new ListaProvincia(poblacion);
+		
+		/*ListaProvincia provincias = new ListaProvincia(poblacion);
 		try {
 			provincias.addProvincia(p1);
 			provincias.addProvincia(p2);
@@ -27,8 +30,15 @@ public class GestionaProvincias {
 		
 		for (Provincia cadena:poblacion1) {
 			System.out.println(cadena);
-		}
+		}*/
+		
+		poblaciones.add(p1);
+		poblaciones.add(p2);
+		poblaciones.add(p1);
+	
+		Collections.sort(poblaciones);
 	}
+	
 	
 
 }

@@ -2,7 +2,7 @@ package Provincia;
 
 import java.util.Objects;
 
-public class Provincia {
+public class Provincia implements Comparable{
 	private int numhab;
 	private String nombre;
 	public int getNumhab() {
@@ -36,6 +36,11 @@ public class Provincia {
 			return false;
 		Provincia other = (Provincia) obj;
 		return Objects.equals(nombre, other.nombre) && numhab == other.numhab;
+	}
+	@Override
+	public int compareTo(Object o) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 	
 	}
