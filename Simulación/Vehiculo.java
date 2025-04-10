@@ -2,7 +2,7 @@ package Simulación;
 
 import java.util.Objects;
 
-public class Vehiculo implements Comparable{
+public class Vehiculo implements Comparable<Vehiculo>{
 	private String numbast,numatr,marca,modelo,propietario;
 	private int anyo;
 	public String getNumbast() {
@@ -71,10 +71,8 @@ public class Vehiculo implements Comparable{
 				+ ", propietario=" + propietario + ", anyo=" + anyo + "]";
 	}
 	@Override
-	public int compareTo(Object o) {
-		Vehiculo v = (Vehiculo) o;
-		int resultado = this.numbast.compareTo(v.numbast);
-		return resultado;
+	public int compareTo(Vehiculo o) {
+		return this.numatr.compareTo(o.numatr);
 	}
 	
 	

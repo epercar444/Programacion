@@ -32,7 +32,7 @@ public class Remetriculación {
 	}
 	@Override
 	public int hashCode() {
-		return Objects.hash(fechaMatriculacion);
+		return Objects.hash(fechaMatriculacion, numbas);
 	}
 	@Override
 	public boolean equals(Object obj) {
@@ -43,7 +43,7 @@ public class Remetriculación {
 		if (getClass() != obj.getClass())
 			return false;
 		Remetriculación other = (Remetriculación) obj;
-		return Objects.equals(fechaMatriculacion, other.fechaMatriculacion);
+		return Objects.equals(fechaMatriculacion, other.fechaMatriculacion) && Objects.equals(numbas, other.numbas);
 	}
 	@Override
 	public String toString() {
