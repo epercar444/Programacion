@@ -1,15 +1,23 @@
+/bin/
+/.classpath
+/.gitignore
+/.project
+/Agenda/
 /BOLETINTABLAS - copia/
 /BOLETINTABLAS/
 /Biblioteca/
 /Collection/
 /Controlador/
 /EXPREGULARES/
+/Ejemplo/
 /EntornoDesarrollo/
 /Examen_Ejercicio1/
 /Examen_Ejercicio2/
 /Excepciones/
+/Fest/
 /Modelo/
 /Provincia/
+/Simulación/
 /Simulacro1/
 /Simulacro2/
 /Simulacro3/
@@ -17,3 +25,4 @@
 /orentacionAobjetos/
 /orientacionAobjetos/
 /unidadd2/
+/ExcepcionesRecuperacion/
